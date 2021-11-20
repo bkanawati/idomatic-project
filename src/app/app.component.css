@@ -1,0 +1,29 @@
+.card {
+  padding: 35px 25px;
+  padding-bottom: 40px;
+}
+
+.card-actions {
+  padding-top: 72px;
+  margin: 0px;
+}
+
+::ng-deep .mat-select-panel {
+  max-height: 200px !important;
+}
+
+.btn {
+  width: 135px
+}
+
+.create-btn {
+  background-color: #00FA9A
+}
+
+.update-btn {
+  background-color: #F0E68C;
+}
+
+.delete-btn {
+  background-color: #FFB6C1;
+}

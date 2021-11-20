@@ -1,0 +1,45 @@
+<div fxLayoutAlign="center">
+  <mat-card class="card" fxFlex="50%">
+    <mat-card-content>
+      <form [formGroup]="form">
+        <div fxLayout="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Filter prefix:</mat-label>
+            <input type="text" matInput [formControl]="T_prefix">
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="30px">
+          <div fxFlex fxLayout="column">
+            <mat-form-field appearance="outline">
+              <mat-label>Select</mat-label>
+              <mat-select (selectionChange)="changeSelectedValue($event.value)" [formControl]="selectedValue">
+                <mat-option *ngFor="let list of filteredL$ | async" [value]="list.value">
+                  {{list.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div fxFlex fxLayout="column">
+            <mat-form-field appearance="outline">
+              <mat-label>Name:</mat-label>
+              <input type="text" matInput formControlName="T_name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Surname:</mat-label>
+              <input type="text" matInput formControlName="T_surname">
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions fxLayout="row" fxLayoutGap="20px" class="card-actions">
+      <button type="button" class="create-btn btn" (click)="onCreate()"><b>Create</b></button>
+      <button type="button" mat-raised-button class="update-btn btn" (click)="onUpdate()" [disabled]="!selectedValue.valid"><b>Update</b></button>
+      <button type="button" mat-raised-button class="delete-btn btn" (click)="onDelete()" [disabled]="!selectedValue.valid"><b>Delete</b></button>
+    </mat-card-actions>
+  </mat-card>
+</div>
