@@ -6,22 +6,29 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+If `ng serve` does not work, just run the script manually `npm start`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Functionality
 
-## Build
+## Filter
+- filter will only be erased if manually erased or page is refreshed.
+- A `like` search method is applied to the `surnames` in the list. 
+   - Ex: `B` or `b` is inserted, the list will be filtered all surnames that contain those letters.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Create
+- Button is always enabled
+- Adds the new `name` and `surname` to the list if and only if they DO NOT already exist in the list. 
 
-## Running unit tests
+## Update
+- Button is disabled and is only enabled if a name is selected from the `list`.
+- Updates the selected name with the new names typed in the `list`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Delete 
+- Button is disabled and is only enabled if a name is selected from the `list`.
+- Removes the selected name from the `list`.
 
-## Running end-to-end tests
+### Libraries used:
+- Angular Material
+- Lodash 
+- RxJS (Observables) 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
